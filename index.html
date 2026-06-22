@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' rel='stylesheet'>
+
+    <title>Password Generator</title>
+</head>
+
+<body>
+
+    <div class="alert">Select at least one format to apply</div>
+
+    <div class="main_container">
+        <label class="container_input_text">
+            <input type="text" id="passwordOutput" readonly placeholder="Generate a password...">
+        </label>
+
+        <div class="to_apply">
+
+            <div class="copy_container">
+                <div class="btn_copy">
+                    <i class="fa-solid fa-copy"></i>
+                </div>
+                <div class="tooltip"> <span></span> Copy</div>
+            </div>
+
+            <div class="formats_container" id="selectFormat">
+                <div class="formats">Formats</div><i class="fa-solid fa-chevron-down"></i>
+                <div class="tooltip" id="formats">
+
+                    <label class="option">
+                        <input type="checkbox" value="lower" checked>
+                        <span class="custom"></span>
+                        Lower Case (a-z)
+                    </label>
+
+                    <label class="option">
+                        <input type="checkbox" value="upper">
+                        <span class="custom"></span>
+                        Upper Case (A-Z)
+                    </label>
+
+                    <label class="option">
+                        <input type="checkbox" value="numbers">
+                        <span class="custom"></span>
+                        Numbers (0-9)
+                    </label>
+
+                    <label class="option">
+                        <input type="checkbox" value="special">
+                        <span class="custom"></span>
+                        Special characters
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="range_container">
+                <div class="tooltip">25%</div>
+                <p>Lenght</p>
+                <!-- <input type="range" value="25" id="charactersRange"> -->
+                <input type="range" id="charactersRange" min="6" max="50" value="17">
+            </div>
+
+            <button class="btn">Generate</button>
+            <!-- <button class="btn">Regenerate</button> -->
+
+        </div>
+
+    </div>
+
+    <script src="assets/scripts.js"></script>
+</body>
+
+</html>
