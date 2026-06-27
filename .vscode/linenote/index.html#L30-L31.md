@@ -1,1 +1,0 @@
-Ajustar para que cada opcio tenga un circulo selector de activacion

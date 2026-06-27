@@ -8,8 +8,11 @@
     --main_background: #1a1a1a;
     --background_dark: #0e0e10;
     --background_dark_light: #141416;
-    --border_color_hover_effect: #4343434a;
     --background_white: #f1f1f1;
+    --background_light_color_red: #3d1e24;
+    
+    --border_color_hover_effect: #4343434a;
+    --border_color_dark_red: #c91e1e;
 
     --color_green: #4CAF50;
 
@@ -20,22 +23,24 @@ body {
     font-family: sans-serif;
     display: grid;
     place-content: center;
-    color: var(--background_white);
     min-height: 100vh;
+    color: var(--background_white);
     background-color: var(--main_background);
 }
 
 .alert {
     opacity: 0;
+    width: max-content;
     position: absolute;
     top: -50%; left: 50%;
-    padding: 1rem 12px;
+    padding: 12px 16px;
     transform: translate(-50%, 50%);
     text-align: center;
     border-radius: 6px;
+    color: var(--border_color_dark_red);
     transition: var(--transition_smooth);
-    border: 1px solid var(--border_color_hover_effect);
-    background-color: var(--background_dark);
+    border: 1px solid var(--border_color_dark_red);
+    background-color: var(--background_light_color_red);
 }
 
 .alert.active {
@@ -44,9 +49,9 @@ body {
 }
 
 .main_container {
-    /* width: 600px; */
-    border-radius: 12px;
+    position: relative;
     padding: 12px;
+    border-radius: 12px;
     background-color: var(--background_dark);
 }
 
@@ -72,8 +77,6 @@ input[type="text"] {
 .to_apply {
     display: flex;
     gap: 8px;
-    /* justify-content: space-between; */
-    height: 40px;
 }
 
 .copy_container,
@@ -82,6 +85,7 @@ input[type="text"] {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
     border-radius: 6px;
     border: 1px solid var(--border_color_hover_effect);
 }
@@ -143,7 +147,6 @@ input[type="text"] {
 .fa-check {
     color: var(--color_green);
 }
-
 /** Copy Button End */
 
 
@@ -264,4 +267,36 @@ button {
     color: var(--background_white);
     background-color: var(--main_background);
     border-top: 1px solid var(--border_color_hover_effect);
+}
+
+@media (max-width: 800px) {
+
+    .main_container {
+        width: 350px;
+    }
+
+    .to_apply {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .copy_container {
+        position: absolute;
+        top: 12px; right: 12px;
+    }
+
+    .to_apply .btn {
+        width: 100%;
+    }
+
+    .copy_container,
+    .formats_container,
+    .range_container,
+    .btn {
+        padding: 5px;
+    }
+
+    /* .copy_container:nth-child(1) {
+        display: none;
+    } */
 }

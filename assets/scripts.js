@@ -1,4 +1,4 @@
-//* Copy Button Star
+//* Copy Button Start
 const passwordInput = document.getElementById("passwordOutput");
 const copyBtn = document.querySelector(".copy_container");
 const copyIcon = document.querySelector(".fa-copy");
@@ -22,7 +22,11 @@ async function copyPassword() {
         }, 2000);
 
         passwordInput.value = "";
-        passwordInput.placeholder = "Generate a new password";
+        passwordInput.placeholder = "Password pasted to clipboard";
+        
+        setTimeout(() => {
+            passwordInput.placeholder = "Generate a new password";
+        }, 2500);
 
     } catch (error) {
         console.error("Error to copy:", error);
@@ -89,7 +93,7 @@ updateRangeValue();
 // * Characters Range Control End
 
 
-//* Show Random Password Ouutput Start
+//* Show Random Password Output Start
 document.querySelector(".btn").addEventListener("click", () => {
 
     const length = document.getElementById("charactersRange").value;
@@ -98,7 +102,11 @@ document.querySelector(".btn").addEventListener("click", () => {
 
     if (characters === "") {
         const alert = document.querySelector(".alert");
-        alert.classList.add("active"); //! Ajustar para que solo se muestre por 2 Segundos
+        alert.classList.add('active'); //! Ajustar para que solo se muestre por 2 Segundos
+        setTimeout(() => {
+            alert.classList.remove('active');
+        }, 2500);
+
         return;
     }
 
@@ -106,4 +114,10 @@ document.querySelector(".btn").addEventListener("click", () => {
 
     passwordInput.value = password;
 });
-//* Show Random Password Ouutput End
+//* Show Random Password Output End
+
+const btnGenerate = document.querySelector('.btn');
+
+btnGenerate.addEventListener('click', () => {
+    btnGenerate.textContent = 'Regenerate';
+});
